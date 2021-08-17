@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_shade_one"
+    tools:context=".MainActivity">
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idPBLoading"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+<!--    Tha main container-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/RLhome">
+
+         <!-- Background Image       -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/black_shade_one"
+            android:scaleType="centerCrop"
+            android:id="@+id/bg_img"/>
+
+         <!-- textView to display the name of City-->
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City Name"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:padding="20dp"
+            android:textSize="18sp"/>
+
+      <!--Linear Layout to display two views (edit text & search icon)        -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:id="@+id/LLedit_text"
+          android:layout_below="@+id/city_name"
+          android:weightSum="5">
+
+           <!--Container for Text Input layout and search icon-->
+          <com.google.android.material.textfield.TextInputLayout
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:id="@+id/input_city_container"
+              android:layout_margin="10dp"
+              android:layout_weight="4.5"
+              android:background="@android:color/transparent"
+              android:hint="Enter City Name"
+              android:padding="5dp"
+              app:hintTextColor="@color/white"
+              android:textColorHint="@color/white">
+
+
+             <!--TextInputEditText and icon-->
+              <com.google.android.material.textfield.TextInputEditText
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/input_city"
+                  android:importantForAutofill="no"
+                  android:inputType="text"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textSize="14sp"
+                  android:background="@android:color/transparent"/>
+
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <!--  Search Icon-->
+          <ImageView
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:src="@drawable/ic_search"
+              android:layout_weight="0.5"
+              android:id="@+id/search_icon"
+              android:layout_margin="10dp"
+              android:layout_gravity="center"
+              android:background="@android:color/transparent"
+              android:tint="@color/white"/>
+      </LinearLayout>
+
+        <!-- Text View To display temperature-->
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LLedit_text"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="23"
+            android:textColor="@color/white"
+            android:textSize="70dp" />
+
+       <!--Image view to display image of weather condition-->
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/temperature"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <!--  texView to display weather condition -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/weather_condition"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:text="Condition"
+            android:textColor="@color/white"
+            android:layout_below="@+id/weather_icon"/>
+
+        <!-- To Display Today's weather forecast-->
+           <!-- Place it above recycler view       -->
+        <TextView
+            android:id="@+id/weather_forecast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/RVweather"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="Today's Weather Forecast"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+
+
+<!--   Recycler view     -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RVweather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+
+
+
+
+
+"
+
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
